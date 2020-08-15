@@ -47,9 +47,9 @@ class Sidebar extends React.Component {
           style={styles.profileImg}
         />
         <Text style={{ fontWeight: "bold", fontSize: 16, marginTop: 10 }}>
-          Janna Doe
+          Mushiana Advocate
         </Text>
-        <Text style={{ color: "gray", marginBottom: 10 }}>janna@doe.com</Text>
+        <Text style={{ color: "gray", marginBottom: 10 }}>0761872725</Text>
         <View style={styles.sidebarDivider}></View>
         <FlatList
           style={{ width: "100%", marginLeft: 30 }}

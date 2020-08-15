@@ -6,26 +6,32 @@ const Settings = ({ navigation }) => (
   <View
     style={{
       backgroundColor: "#fff",
-      paddingTop: 40,
-      alignItems: "center",
       flex: 1,
+      marginTop: 20,
     }}
   >
     <View
       style={{
         backgroundColor: "#fff",
-        paddingTop: 40,
-        alignItems: "center",
-        flex: 1,
+        //paddingTop: 40,
+        //alignItems: "center",
+        height: "10%",
+        flexDirection: "row",
+        //justifyContent: "space-around",
+        marginLeft: 9,
       }}
     >
-      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+      <TouchableOpacity
+        style={{ alignSelf: "center" }}
+        onPress={() => navigation.openDrawer()}
+      >
         <Ionicons name="ios-menu" size={32} />
       </TouchableOpacity>
-      <Text>Settings</Text>
-      <Text style={{ width: 50 }}></Text>
+      <Text style={{ alignSelf: "center", marginLeft: 9 }}>Settings </Text>
     </View>
-    <Text style={{ padding: 20 }}>This is our Settings page</Text>
+    <Text style={{ marginTop: "50%", alignSelf: "center" }}>
+      Profile Still Under Construction
+    </Text>
   </View>
 );
 

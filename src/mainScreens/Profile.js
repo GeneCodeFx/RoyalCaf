@@ -6,26 +6,33 @@ const Profile = ({ navigation }) => (
   <View
     style={{
       backgroundColor: "#fff",
-      paddingTop: 40,
-      alignItems: "center",
       flex: 1,
+      marginTop: 20,
     }}
   >
     <View
       style={{
         backgroundColor: "#fff",
-        paddingTop: 40,
-        alignItems: "center",
-        flex: 1,
+        //paddingTop: 40,
+        //alignItems: "center",
+        height: "10%",
+        flexDirection: "row",
+        justifyContent: "space-around",
       }}
     >
-      <TouchableOpacity onPress={() => navigation.openDrawer()}>
+      <TouchableOpacity
+        style={{ alignSelf: "center" }}
+        onPress={() => navigation.openDrawer()}
+      >
         <Ionicons name="ios-menu" size={32} />
       </TouchableOpacity>
-      <Text>Profile</Text>
-      <Text style={{ width: 50 }}></Text>
+      <Text style={{ alignSelf: "center" }}>
+        Welcome to your Royal Cafeteria Profile{" "}
+      </Text>
     </View>
-    <Text style={{ padding: 20 }}>This is our Profile screen</Text>
+    <Text style={{ marginTop: "50%", alignSelf: "center" }}>
+      Profile Page Coming Soon
+    </Text>
   </View>
 );
 
