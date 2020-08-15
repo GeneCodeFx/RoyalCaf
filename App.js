@@ -1,21 +1,42 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation-drawer";
+import { createStackNavigator } from "react-navigation-stack";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+import Sidebar from "./src/mainScreens/Sidebar";
+import Settings from "./src/mainScreens/Settings";
+import Profile from "./src/mainScreens/Profile";
+import Home from "./src/mainScreens/Home";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const Drawer = createDrawerNavigator(
+  {
+    Home: { screen: Home },
+    Profile: { screen: Profile },
+    Settings: { screen: Settings },
   },
-});
+  {
+    initialRouteName: "Home",
+    unmountInactiveRoutes: true,
+    headerMode: "none",
+    contentComponent: (props) => <Sidebar {...props} />,
+  }
+);
+
+const AppNavigator = createStackNavigator(
+  {
+    Drawer: { screen: Drawer },
+  },
+  {
+    initialRouteName: "Drawer",
+    headerMode: "none",
+    unmountInactiveRoutes: true,
+  }
+);
+
+const AppContainer = createAppContainer(AppNavigator);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
+  }
+}
