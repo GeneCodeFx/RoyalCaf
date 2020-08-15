@@ -1,42 +1,28 @@
-import React from "react";
-import { createAppContainer } from "react-navigation";
-import { createDrawerNavigator } from "react-navigation-drawer";
-import { createStackNavigator } from "react-navigation-stack";
+import { createSwitchNavigator, createAppContainer } from "react-navigation";
 
-import Sidebar from "./src/mainScreens/Sidebar";
-import Settings from "./src/mainScreens/Settings";
-import Profile from "./src/mainScreens/Profile";
-import Home from "./src/mainScreens/Home";
+import Loading from "./src/authScreens/Loading";
+import RoyalCafe from "./src/authScreens/RoyalCafe";
+import SignUpPage from "./src/authScreens/SignUpPage";
+import LoginScreen from "./src/authScreens/LoginScreen";
+import UserInfo from "./src/authScreens/UserInfo";
+import saveUser from "./src/authScreens/saveUser";
+import storeUserData from "./src/authScreens/storeUserData";
+import error from "./src/authScreens/error";
 
-const Drawer = createDrawerNavigator(
-  {
-    Home: { screen: Home },
-    Profile: { screen: Profile },
-    Settings: { screen: Settings },
-  },
-  {
-    initialRouteName: "Home",
-    unmountInactiveRoutes: true,
-    headerMode: "none",
-    contentComponent: (props) => <Sidebar {...props} />,
-  }
+export default createAppContainer(
+  createSwitchNavigator(
+    {
+      RoyalCafe,
+      LoginScreen,
+      SignUpPage,
+      Loading,
+      UserInfo,
+      saveUser,
+      storeUserData: storeUserData,
+      error: error,
+    },
+    {
+      initialRouteName: "Loading",
+    }
+  )
 );
-
-const AppNavigator = createStackNavigator(
-  {
-    Drawer: { screen: Drawer },
-  },
-  {
-    initialRouteName: "Drawer",
-    headerMode: "none",
-    unmountInactiveRoutes: true,
-  }
-);
-
-const AppContainer = createAppContainer(AppNavigator);
-
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
-}
