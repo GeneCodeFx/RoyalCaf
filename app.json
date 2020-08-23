@@ -13,7 +13,9 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -26,6 +28,11 @@
     "androidNavigationBar": {
       "barStyle": "light-content",
       "backgroundColor": "#5c052c"
+    },
+    "description": "This App is still under construction. Please give me any feedback and suggestion once you have used it. WhatsApp me (Mulweli) at 0799016924 or contact my partner Advocate at 0761872725. ",
+    "githubUrl": "https://github.com/GeneCodeFx/RoyalCaf.git",
+    "android": {
+      "package": "com.RoyalCafeteria.Online"
     }
   }
 }

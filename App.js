@@ -8,6 +8,7 @@ import UserInfo from "./src/authScreens/UserInfo";
 import saveUser from "./src/authScreens/saveUser";
 import storeUserData from "./src/authScreens/storeUserData";
 import error from "./src/authScreens/error";
+import App from "./src/junkCode/animations";
 
 export default createAppContainer(
   createSwitchNavigator(
@@ -20,9 +21,10 @@ export default createAppContainer(
       saveUser,
       storeUserData: storeUserData,
       error: error,
+      App,
     },
     {
-      initialRouteName: "Loading",
+      initialRouteName: "App",
     }
   )
 );
